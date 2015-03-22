@@ -35,7 +35,7 @@ MainScreen = cc.Layer.extend({
         this._super();
         this.scheduleOnce(function() {
             new sz.GuideLayer(this, guideConfig);
-        }, 1);
+        }, 0.5);
     },
 
     _onBtnHomeTouchEnded: function() {
