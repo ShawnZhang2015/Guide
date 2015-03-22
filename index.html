@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Hello Cocos2d-JS</title>
+    <script type="text/javascript" src="frameworks/cocos2d-js-v3.3.js" charset="UTF-8"></script>
+    <script>
+        /**
+         * 重置引导，刷新浏览器
+         */
+        function resetGuide() {
+            var localStorage = localStorage || cc.sys.localStorage;
+            localStorage.setItem(sz.GuideIndexName, 0);
+            document.location.reload();
+        }
+    </script>
+
+</head>
+<body>
+    <button type="submit" onclick="resetGuide()">重置引导</button>
+    <div style="width: 640px; height: 960px;margin:auto;  position:absolute; top: 0; left: 0; bottom: 0; right: 0;border:5px solid black; border-radius: 10px; box-shadow: 0 5px 50px #333">
+            <canvas id="gameCanvas" width="644" height="960"></canvas>
+    </div>
+   	<script type="text/javascript", src="main.js"></script>
+
+</body>
+</html>

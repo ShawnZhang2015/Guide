@@ -1,0 +1,15 @@
+{
+    "debugMode"     : 1,
+    "frameRate"     : 25,
+    "id"            : "gameCanvas",
+    "renderMode"    : 1,
+    "jsList"        : [
+        "src/lib/async.js",
+        "src/lib/UILoader.js",
+        "src/lib/Guide.js",
+        "src/resource.js",
+        "src/guideConfig.js",
+        "src/ui/MainScreen.js"
+
+    ]
+}

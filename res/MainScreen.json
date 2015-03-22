@@ -1,0 +1,205 @@
+{
+  "ID": "24997fd0-1c17-46c3-b351-335ce98a3bbf",
+  "Version": "2.1.5.0",
+  "Name": "MainScreen",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "PrePosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "PreSize": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Children": [
+          {
+            "InnerNodeSize": {
+              "Width": 750,
+              "Height": 700
+            },
+            "ScrollDirectionType": "Horizontal",
+            "BackColorAlpha": 102,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "G": 150,
+              "B": 100
+            },
+            "FirstColor": {
+              "G": 150,
+              "B": 100
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleX": 1.0
+            },
+            "Scale9Enable": true,
+            "TouchEnable": true,
+            "Tag": 695,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.1715
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 0.3151,
+            "RightMargin": -0.3151,
+            "TopMargin": 94.1431,
+            "BottomMargin": 165.857,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "AltarScene.json"
+                },
+                "Tag": 1085,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "ActionTag": 692171387,
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "AnchorPoint": {},
+                "CColor": {},
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "FrameEvent": "",
+                "Name": "ProjectNode_5",
+                "ctype": "ProjectNodeObjectData"
+              }
+            ],
+            "ActionTag": 772686604,
+            "Position": {
+              "X": -0.0049,
+              "Y": 164.597
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleX": -0.0005,
+              "ScaleY": -0.0018
+            },
+            "CColor": {},
+            "Size": {
+              "X": 640.0,
+              "Y": 700.0
+            },
+            "FrameEvent": "",
+            "Name": "ScrollView_1",
+            "ctype": "ScrollViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "MainMenu.json"
+            },
+            "Tag": 5198,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 2120884265,
+            "Position": {
+              "X": -0.5,
+              "Y": -5.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "CColor": {},
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "FrameEvent": "",
+            "Name": "ProjectNode_7",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "PlayerStats.json"
+            },
+            "Tag": 5368,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "ActionTag": 2120884435,
+            "Position": {
+              "X": 0.4997,
+              "Y": -5.5013
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "CColor": {},
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "FrameEvent": "",
+            "Name": "ProjectNode_8",
+            "ctype": "ProjectNodeObjectData"
+          }
+        ],
+        "Position": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Scale": {
+          "ScaleX": 1.0,
+          "ScaleY": 1.0
+        },
+        "AnchorPoint": {},
+        "CColor": {},
+        "Size": {
+          "X": 640.0,
+          "Y": 960.0
+        },
+        "FrameEvent": "",
+        "Name": "Node_0",
+        "ctype": "NodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

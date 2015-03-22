@@ -1,0 +1,1569 @@
+{
+  "ID": "24997fd0-1c17-46c3-b351-335ce98a3bbf",
+  "Version": "2.1.5.0",
+  "Name": "PlayerStats",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "PrePosition": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "PreSize": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "MainMenu/MM24.png"
+            },
+            "Scale9Enable": true,
+            "Scale9Width": 640,
+            "Scale9Height": 150,
+            "Tag": 22,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Children": [
+              {
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleX": 1.0
+                },
+                "Scale9Enable": true,
+                "TouchEnable": true,
+                "Tag": 17,
+                "PrePosition": {
+                  "X": 0.0424,
+                  "Y": 0.5138
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Children": [
+                  {
+                    "BackColorAlpha": 0,
+                    "ComboBoxIndex": 1,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleX": 1.0
+                    },
+                    "Scale9Enable": true,
+                    "TouchEnable": true,
+                    "Tag": 18,
+                    "PrePosition": {
+                      "X": 0.545,
+                      "Y": 0.4219
+                    },
+                    "PreSize": {
+                      "X": 0.875,
+                      "Y": 0.265
+                    },
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MainMenu/MM06.png"
+                        },
+                        "Scale9Enable": true,
+                        "Scale9Width": 278,
+                        "Scale9Height": 53,
+                        "Tag": 19,
+                        "PrePosition": {
+                          "X": 0.4971,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 0.9029,
+                          "Y": 1.0
+                        },
+                        "ActionTag": 813685588,
+                        "Position": {
+                          "X": 87.0,
+                          "Y": 26.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "CColor": {},
+                        "Size": {
+                          "X": 158.0,
+                          "Y": 53.0
+                        },
+                        "FrameEvent": "",
+                        "Name": "pic_bg",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MainMenu/MM02.png"
+                        },
+                        "Scale9Width": 188,
+                        "Scale9Height": 54,
+                        "Tag": 20,
+                        "PrePosition": {
+                          "X": 0.4857,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.0743,
+                          "Y": 1.0189
+                        },
+                        "ActionTag": 614339633,
+                        "Position": {
+                          "X": 85.0,
+                          "Y": 26.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "CColor": {},
+                        "Size": {
+                          "X": 188.0,
+                          "Y": 54.0
+                        },
+                        "FrameEvent": "",
+                        "Name": "pic_cv",
+                        "ctype": "ImageViewObjectData"
+                      }
+                    ],
+                    "ActionTag": 226223213,
+                    "Position": {
+                      "X": 109.0,
+                      "Y": 27.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 175.0,
+                      "Y": 53.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "pic_bandbg",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "FontSize": 26,
+                    "LabelText": "Cocos",
+                    "Tag": 11,
+                    "PrePosition": {
+                      "X": 0.545,
+                      "Y": 0.4171
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "ActionTag": 50203699,
+                    "Position": {
+                      "X": 109.0,
+                      "Y": 26.6926
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {
+                      "R": 246,
+                      "B": 133
+                    },
+                    "Size": {
+                      "X": 76.0,
+                      "Y": 35.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "playername",
+                    "ctype": "TextObjectData"
+                  }
+                ],
+                "ActionTag": 943009350,
+                "Position": {
+                  "X": 27.1422,
+                  "Y": 71.9285
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "AnchorPoint": {},
+                "CColor": {},
+                "Size": {
+                  "X": 200.0,
+                  "Y": 64.0
+                },
+                "FrameEvent": "",
+                "Name": "namepanel",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleX": 1.0
+                },
+                "Scale9Enable": true,
+                "TouchEnable": true,
+                "Tag": 14,
+                "PrePosition": {
+                  "X": 0.0033,
+                  "Y": 0.4781
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MainMenu/MM03.png"
+                    },
+                    "Tag": 15,
+                    "PrePosition": {
+                      "X": 0.535,
+                      "Y": 0.4802
+                    },
+                    "PreSize": {
+                      "X": 0.8442,
+                      "Y": 0.6753
+                    },
+                    "Children": [
+                      {
+                        "FontSize": 20,
+                        "LabelText": "3",
+                        "Tag": 16,
+                        "PrePosition": {
+                          "X": 0.5079,
+                          "Y": 0.382
+                        },
+                        "PreSize": {
+                          "X": 0.2308,
+                          "Y": 0.5769
+                        },
+                        "ActionTag": 982078612,
+                        "Position": {
+                          "X": 33.0119,
+                          "Y": 27.8855
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "CColor": {
+                          "R": 246,
+                          "B": 133
+                        },
+                        "Size": {
+                          "X": 12.0,
+                          "Y": 27.0
+                        },
+                        "FrameEvent": "",
+                        "Name": "starscount",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 289793238,
+                    "Position": {
+                      "X": 41.1929,
+                      "Y": 36.9769
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 65.0,
+                      "Y": 73.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "Stars",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 64613858,
+                "Position": {
+                  "X": 2.1424,
+                  "Y": 66.9283
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "AnchorPoint": {},
+                "CColor": {},
+                "Size": {
+                  "X": 77.0,
+                  "Y": 77.0
+                },
+                "FrameEvent": "",
+                "Name": "seniorPanel",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleX": 1.0
+                },
+                "Scale9Enable": true,
+                "TouchEnable": true,
+                "Tag": 26,
+                "PrePosition": {
+                  "X": 0.3476,
+                  "Y": 0.4816
+                },
+                "PreSize": {
+                  "X": 0.3125,
+                  "Y": 0.4267
+                },
+                "Children": [
+                  {
+                    "BackColorAlpha": 0,
+                    "ComboBoxIndex": 1,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleX": 1.0
+                    },
+                    "Scale9Enable": true,
+                    "TouchEnable": true,
+                    "Tag": 27,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.875,
+                      "Y": 0.8281
+                    },
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MainMenu/MM06.png"
+                        },
+                        "Scale9Enable": true,
+                        "Scale9Width": 278,
+                        "Scale9Height": 53,
+                        "Tag": 28,
+                        "PrePosition": {
+                          "X": 0.4686,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 0.9429,
+                          "Y": 1.0
+                        },
+                        "ActionTag": 126338286,
+                        "Position": {
+                          "X": 82.0,
+                          "Y": 26.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "CColor": {},
+                        "Size": {
+                          "X": 165.0,
+                          "Y": 53.0
+                        },
+                        "FrameEvent": "",
+                        "Name": "pic_bg",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MainMenu/MM02.png"
+                        },
+                        "Scale9Enable": true,
+                        "Scale9Width": 188,
+                        "Scale9Height": 54,
+                        "Tag": 29,
+                        "PrePosition": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "PreSize": {
+                          "X": 1.0743,
+                          "Y": 1.0189
+                        },
+                        "ActionTag": 525807031,
+                        "Position": {
+                          "X": 85.0,
+                          "Y": 26.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "CColor": {},
+                        "Size": {
+                          "X": 188.0,
+                          "Y": 54.0
+                        },
+                        "FrameEvent": "",
+                        "Name": "pic_cv",
+                        "ctype": "ImageViewObjectData"
+                      }
+                    ],
+                    "ActionTag": 516143622,
+                    "Position": {
+                      "X": 109.0,
+                      "Y": 27.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 175.0,
+                      "Y": 53.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "pic_bandbg",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "FontSize": 26,
+                    "LabelText": "10000000",
+                    "Tag": 30,
+                    "PrePosition": {
+                      "X": 0.5652,
+                      "Y": 0.4171
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "ActionTag": 106985078,
+                    "Position": {
+                      "X": 113.0372,
+                      "Y": 26.6926
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {
+                      "R": 246,
+                      "B": 133
+                    },
+                    "Size": {
+                      "X": 120.0,
+                      "Y": 35.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "mocoinscount",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "Common/Cn16.png"
+                    },
+                    "Scale9Width": 57,
+                    "Scale9Height": 53,
+                    "Tag": 31,
+                    "PrePosition": {
+                      "X": 0.1669,
+                      "Y": 0.4518
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "ActionTag": 219812278,
+                    "Position": {
+                      "X": 33.3852,
+                      "Y": 28.913
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 57.0,
+                      "Y": 53.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "mocoins",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 937535227,
+                "Position": {
+                  "X": 222.4818,
+                  "Y": 72.243
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "AnchorPoint": {},
+                "CColor": {},
+                "Size": {
+                  "X": 200.0,
+                  "Y": 64.0
+                },
+                "FrameEvent": "",
+                "Name": "micoinPanel",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleX": 1.0
+                },
+                "Scale9Enable": true,
+                "TouchEnable": true,
+                "Tag": 32,
+                "PrePosition": {
+                  "X": 0.6937,
+                  "Y": 0.4816
+                },
+                "PreSize": {
+                  "X": 0.3125,
+                  "Y": 0.4267
+                },
+                "Children": [
+                  {
+                    "BackColorAlpha": 0,
+                    "ComboBoxIndex": 1,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleX": 1.0
+                    },
+                    "Scale9Enable": true,
+                    "TouchEnable": true,
+                    "Tag": 33,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.95,
+                      "Y": 0.8281
+                    },
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MainMenu/MM06.png"
+                        },
+                        "Scale9Enable": true,
+                        "Scale9Width": 278,
+                        "Scale9Height": 53,
+                        "Tag": 34,
+                        "PrePosition": {
+                          "X": 0.4053,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 0.9368,
+                          "Y": 1.0
+                        },
+                        "ActionTag": 472261624,
+                        "Position": {
+                          "X": 77.0,
+                          "Y": 26.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "CColor": {},
+                        "Size": {
+                          "X": 178.0,
+                          "Y": 53.0
+                        },
+                        "FrameEvent": "",
+                        "Name": "pic_bg",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "Normal",
+                          "Path": "MainMenu/MM02.png"
+                        },
+                        "Scale9Enable": true,
+                        "Scale9Width": 188,
+                        "Scale9Height": 54,
+                        "Tag": 35,
+                        "PrePosition": {
+                          "X": 0.4474,
+                          "Y": 0.5
+                        },
+                        "PreSize": {
+                          "X": 1.0,
+                          "Y": 1.0
+                        },
+                        "ActionTag": 312799703,
+                        "Position": {
+                          "X": 85.0,
+                          "Y": 26.5
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "CColor": {},
+                        "Size": {
+                          "X": 188.0,
+                          "Y": 54.0
+                        },
+                        "FrameEvent": "",
+                        "Name": "pic_cv",
+                        "ctype": "ImageViewObjectData"
+                      }
+                    ],
+                    "ActionTag": 706281390,
+                    "Position": {
+                      "X": 109.0,
+                      "Y": 27.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 190.0,
+                      "Y": 53.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "pic_bandbg",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "FontSize": 26,
+                    "LabelText": "1000000000",
+                    "Tag": 36,
+                    "PrePosition": {
+                      "X": 0.4723,
+                      "Y": 0.4045
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "ActionTag": 607737376,
+                    "Position": {
+                      "X": 94.4527,
+                      "Y": 25.8851
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {
+                      "R": 246,
+                      "B": 133
+                    },
+                    "Size": {
+                      "X": 150.0,
+                      "Y": 35.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "coinscount",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "Common/Cn19.png"
+                    },
+                    "Scale9Enable": true,
+                    "Scale9Width": 62,
+                    "Scale9Height": 62,
+                    "Tag": 37,
+                    "PrePosition": {
+                      "X": 0.0132,
+                      "Y": 0.4199
+                    },
+                    "PreSize": {
+                      "X": 0.27,
+                      "Y": 0.8438
+                    },
+                    "ActionTag": 416689186,
+                    "Position": {
+                      "X": 2.6421,
+                      "Y": 26.8759
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 62.0,
+                      "Y": 62.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "coins",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 829058971,
+                "Position": {
+                  "X": 443.9559,
+                  "Y": 72.243
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "AnchorPoint": {},
+                "CColor": {},
+                "Size": {
+                  "X": 200.0,
+                  "Y": 64.0
+                },
+                "FrameEvent": "",
+                "Name": "coinPanel",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleX": 1.0
+                },
+                "TouchEnable": true,
+                "Tag": 48,
+                "PrePosition": {
+                  "X": 0.0455,
+                  "Y": 0.0223
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MainMenu/MM06.png"
+                    },
+                    "Scale9Enable": true,
+                    "Scale9Width": 278,
+                    "Scale9Height": 53,
+                    "Tag": 38,
+                    "PrePosition": {
+                      "X": 0.5808,
+                      "Y": 0.4531
+                    },
+                    "PreSize": {
+                      "X": 0.9615,
+                      "Y": 0.8281
+                    },
+                    "ActionTag": 133761885,
+                    "Position": {
+                      "X": 151.0,
+                      "Y": 29.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 278.0,
+                      "Y": 53.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "pic_bg",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MainMenu/MM04.png"
+                    },
+                    "Scale9Enable": true,
+                    "Scale9Width": 61,
+                    "Scale9Height": 59,
+                    "Tag": 49,
+                    "PrePosition": {
+                      "X": 0.1077,
+                      "Y": 0.4688
+                    },
+                    "PreSize": {
+                      "X": 0.2115,
+                      "Y": 0.9844
+                    },
+                    "ActionTag": 335578568,
+                    "Position": {
+                      "X": 28.0,
+                      "Y": 30.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 61.0,
+                      "Y": 59.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "energy",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "BackColorAlpha": 0,
+                    "ComboBoxIndex": 1,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleX": 1.0
+                    },
+                    "Scale9Enable": true,
+                    "TouchEnable": true,
+                    "Tag": 51,
+                    "PrePosition": {
+                      "X": 0.2192,
+                      "Y": 0.4063
+                    },
+                    "PreSize": {
+                      "X": 0.3846,
+                      "Y": 0.3125
+                    },
+                    "Children": [
+                      {
+                        "FontSize": 20,
+                        "LabelText": "00:00:00",
+                        "Tag": 56,
+                        "PrePosition": {
+                          "X": 0.5406,
+                          "Y": 0.3694
+                        },
+                        "PreSize": {
+                          "X": 0.8,
+                          "Y": 1.0
+                        },
+                        "ActionTag": 1029051470,
+                        "Position": {
+                          "X": 54.0647,
+                          "Y": 7.3883
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "CColor": {
+                          "R": 185,
+                          "B": 147
+                        },
+                        "Size": {
+                          "X": 82.0,
+                          "Y": 27.0
+                        },
+                        "FrameEvent": "",
+                        "Name": "countdownLbl",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 850031813,
+                    "Position": {
+                      "X": 57.0,
+                      "Y": 26.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {},
+                    "CColor": {},
+                    "Size": {
+                      "X": 100.0,
+                      "Y": 20.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "energyCountdown",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "FontSize": 20,
+                    "LabelText": "120/120",
+                    "Tag": 50,
+                    "PrePosition": {
+                      "X": 0.7538,
+                      "Y": 0.5
+                    },
+                    "PreSize": {
+                      "X": 0.35,
+                      "Y": 0.3906
+                    },
+                    "ActionTag": 985096894,
+                    "Position": {
+                      "X": 196.0,
+                      "Y": 32.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {
+                      "R": 246,
+                      "B": 133
+                    },
+                    "Size": {
+                      "X": 81.0,
+                      "Y": 27.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "energycount",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MainMenu/MM13.png"
+                    },
+                    "Scale9Enable": true,
+                    "Scale9Width": 115,
+                    "Scale9Height": 13,
+                    "Tag": 39,
+                    "PrePosition": {
+                      "X": 0.6454,
+                      "Y": 0.2782
+                    },
+                    "PreSize": {
+                      "X": 0.8462,
+                      "Y": 0.2031
+                    },
+                    "ActionTag": 736533316,
+                    "Position": {
+                      "X": 167.8165,
+                      "Y": 17.8025
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 220.0,
+                      "Y": 13.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "pic_barbg",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "ProgressInfo": 100,
+                    "ImageFileData": {
+                      "Type": "Normal",
+                      "Path": "MainMenu/MM12.png"
+                    },
+                    "Tag": 40,
+                    "PrePosition": {
+                      "X": 0.6425,
+                      "Y": 0.2813
+                    },
+                    "PreSize": {
+                      "X": 0.6538,
+                      "Y": 0.1719
+                    },
+                    "ActionTag": 994979630,
+                    "Position": {
+                      "X": 167.056,
+                      "Y": 18.0
+                    },
+                    "Scale": {
+                      "ScaleX": 2.27,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 94.0,
+                      "Y": 10.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "bar_energy",
+                    "ctype": "LoadingBarObjectData"
+                  }
+                ],
+                "ActionTag": 702407125,
+                "Position": {
+                  "X": 29.1476,
+                  "Y": 3.3428
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "AnchorPoint": {},
+                "CColor": {},
+                "Size": {
+                  "X": 260.0,
+                  "Y": 64.0
+                },
+                "FrameEvent": "",
+                "Name": "energyPanel",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleX": 1.0
+                },
+                "Scale9Enable": true,
+                "TouchEnable": true,
+                "Tag": 42,
+                "PrePosition": {
+                  "X": 0.5159,
+                  "Y": 0.0223
+                },
+                "PreSize": {
+                  "X": 0.4063,
+                  "Y": 0.4267
+                },
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MainMenu/MM06.png"
+                    },
+                    "Scale9Enable": true,
+                    "Scale9Width": 278,
+                    "Scale9Height": 53,
+                    "Tag": 43,
+                    "PrePosition": {
+                      "X": 0.5808,
+                      "Y": 0.4531
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "ActionTag": 975972766,
+                    "Position": {
+                      "X": 151.0,
+                      "Y": 29.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 278.0,
+                      "Y": 53.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "pic_bg",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "FlipX": true,
+                    "FlipY": true,
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "Common/Cn17.png"
+                    },
+                    "Scale9Enable": true,
+                    "Scale9Width": 55,
+                    "Scale9Height": 63,
+                    "Tag": 44,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "ActionTag": 446291272,
+                    "Position": {
+                      "X": 28.0,
+                      "Y": 30.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "Rotation": 179.6827,
+                    "RotationSkewX": 179.6827,
+                    "RotationSkewY": 179.6827,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 55.0,
+                      "Y": 63.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "energy",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "BackColorAlpha": 0,
+                    "ComboBoxIndex": 1,
+                    "SingleColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "FirstColor": {
+                      "R": 150,
+                      "G": 200
+                    },
+                    "EndColor": {},
+                    "ColorVector": {
+                      "ScaleX": 1.0
+                    },
+                    "Scale9Enable": true,
+                    "TouchEnable": true,
+                    "Tag": 45,
+                    "PrePosition": {
+                      "X": 0.285,
+                      "Y": 0.13
+                    },
+                    "PreSize": {
+                      "X": 0.5,
+                      "Y": 0.1
+                    },
+                    "Children": [
+                      {
+                        "FontSize": 20,
+                        "LabelText": "00:00:00",
+                        "Tag": 46,
+                        "PrePosition": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "PreSize": {
+                          "X": 0.0,
+                          "Y": 0.0
+                        },
+                        "ActionTag": 5505226,
+                        "Position": {
+                          "X": 54.0647,
+                          "Y": 7.3883
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "CColor": {
+                          "R": 185,
+                          "B": 147
+                        },
+                        "Size": {
+                          "X": 82.0,
+                          "Y": 27.0
+                        },
+                        "FrameEvent": "",
+                        "Name": "countdownLbl",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": 933848944,
+                    "Position": {
+                      "X": 57.0,
+                      "Y": 26.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {},
+                    "CColor": {},
+                    "Size": {
+                      "X": 100.0,
+                      "Y": 20.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "pvpenergyCountdown",
+                    "ctype": "PanelObjectData"
+                  },
+                  {
+                    "FontSize": 20,
+                    "LabelText": "120/120",
+                    "Tag": 47,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "ActionTag": 244896851,
+                    "Position": {
+                      "X": 196.0,
+                      "Y": 32.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {
+                      "R": 246,
+                      "B": 133
+                    },
+                    "Size": {
+                      "X": 81.0,
+                      "Y": 27.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "energycount",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "MainMenu/MM13.png"
+                    },
+                    "Scale9Enable": true,
+                    "Scale9Width": 115,
+                    "Scale9Height": 13,
+                    "Tag": 48,
+                    "PrePosition": {
+                      "X": 0.6118,
+                      "Y": 0.2819
+                    },
+                    "PreSize": {
+                      "X": 0.8462,
+                      "Y": 0.2031
+                    },
+                    "ActionTag": 528025340,
+                    "Position": {
+                      "X": 159.059,
+                      "Y": 18.0421
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 220.0,
+                      "Y": 13.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "pic_barbg",
+                    "ctype": "ImageViewObjectData"
+                  },
+                  {
+                    "ProgressInfo": 100,
+                    "ImageFileData": {
+                      "Type": "Normal",
+                      "Path": "MainMenu/MM12.png"
+                    },
+                    "Tag": 49,
+                    "PrePosition": {
+                      "X": 0.6118,
+                      "Y": 0.2856
+                    },
+                    "PreSize": {
+                      "X": 0.6538,
+                      "Y": 0.1563
+                    },
+                    "ActionTag": 681473813,
+                    "Position": {
+                      "X": 159.059,
+                      "Y": 18.2815
+                    },
+                    "Scale": {
+                      "ScaleX": 2.27,
+                      "ScaleY": 1.0
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "CColor": {},
+                    "Size": {
+                      "X": 94.0,
+                      "Y": 10.0
+                    },
+                    "FrameEvent": "",
+                    "Name": "bar_energy",
+                    "ctype": "LoadingBarObjectData"
+                  }
+                ],
+                "ActionTag": 1013422394,
+                "Position": {
+                  "X": 330.1477,
+                  "Y": 3.3427
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "AnchorPoint": {},
+                "CColor": {},
+                "Size": {
+                  "X": 260.0,
+                  "Y": 64.0
+                },
+                "FrameEvent": "",
+                "Name": "pvpenergyPanel",
+                "ctype": "PanelObjectData"
+              }
+            ],
+            "ActionTag": 254923150,
+            "Position": {
+              "X": 0.0,
+              "Y": 960.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "Size": {
+              "X": 640.0,
+              "Y": 150.0
+            },
+            "FrameEvent": "",
+            "Name": "TopBar",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Position": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Scale": {
+          "ScaleX": 1.0,
+          "ScaleY": 1.0
+        },
+        "AnchorPoint": {},
+        "CColor": {},
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "FrameEvent": "",
+        "Name": "Node_0",
+        "ctype": "NodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Node"
+}
