@@ -3,6 +3,7 @@
     "frameRate"     : 25,
     "id"            : "gameCanvas",
     "renderMode"    : 1,
+    "engineDir"     : "frameworks/cocos2d-js-v3.3.js",
     "jsList"        : [
         "src/lib/async.js",
         "src/lib/UILoader.js",
