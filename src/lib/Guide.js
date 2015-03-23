@@ -118,7 +118,6 @@ sz.GuideTaskHandle = cc.Class.extend({
     ctor: function(guideLayer, guidConfig) {
         this._guideLayer = guideLayer;
         this._guideConfig = guidConfig;
-
         this._init();
     },
 
@@ -126,7 +125,7 @@ sz.GuideTaskHandle = cc.Class.extend({
         var self = this;
         //获取步骤序号
         var localStorage = localStorage || cc.sys.localStorage;
-        this._index = parseInt(localStorage.getItem(sz.GuideIndexName)) || 0;
+        this._guideLayer._index = parseInt(localStorage.getItem(sz.GuideIndexName)) || 0;
 
         //分析任务
         var tasks = [];
@@ -135,7 +134,7 @@ sz.GuideTaskHandle = cc.Class.extend({
                 tasks.push(this._guideConfig.tasks[key]);
             }
         }
-        tasks.splice(0, this._index);
+        tasks.splice(0, this._guideLayer._index);
         if (!tasks.length) {
             self._exitGuide();
             return;
@@ -180,7 +179,6 @@ sz.GuideTaskHandle = cc.Class.extend({
         async.eachSeries(tasks, function(task, cb) {
             async.eachSeries(task, stepHandle, function() {
                 self._guideLayer.save(true, cb);
-
             });
         }, function() {
             self._exitGuide();
@@ -237,7 +235,7 @@ sz.GuideTaskHandle = cc.Class.extend({
                 break;
             //保存进度
             case sz.GuideCommand.GC_SAVE_PROGRESS:
-                this.save();
+                this._guideLayer.save(false, finish);
                 break;
             default:
                 cc.log("guide command is not define");
@@ -301,10 +299,7 @@ sz.GuideLayer = cc.Layer.extend({
     save: function(isForward, cb) {
         var localStorage = localStorage || cc.sys.localStorage;
 
-        if (isForward) {
-            this._index++;
-        }
-        localStorage.setItem(sz.GuideIndexName, this._index);
+        localStorage.setItem(sz.GuideIndexName, isForward ? ++this._index : this._index + 1);
 
         if (cb) {
             cb();

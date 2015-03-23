@@ -21,6 +21,11 @@ var guideConfig = {
             },
 
             {
+                log: "保存进度",
+                command: sz.GuideCommand.GC_SAVE_PROGRESS
+            },
+
+            {
                 log: "点亮第一盏灯",
                 command: sz.GuideCommand.GC_FINGER_HINT,
                 locator:"_fire1"
@@ -50,5 +55,6 @@ var guideConfig = {
         ]
     },
     locateNodeDurationTime: 0.1,
-    fingerImage: 'res/finger.png'
+    fingerImage: 'res/finger.png',
+    widgetEventType: 2, //touchEnded
 };

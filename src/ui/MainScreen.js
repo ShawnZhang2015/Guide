@@ -6,9 +6,21 @@ MainScreen = cc.Layer.extend({
 
     ctor: function() {
         this._super();
+        var label = new cc.LabelTTF("点我重置引导", "宋体", "32");
+        label.setName('_resetGuide');
+        label.setColor(cc.color.RED);
+        label.setPosition(this.width * 0.2, this.height * 0.8);
+        this.addChild(label, 10);
+
         sz.uiloader.widgetFromJsonFile(this, 'res/MainScreen.json');
         this._fire1.setContentSize(50,50);
         this._fire2.setContentSize(50,50);
+    },
+
+    _onResetGuideTouchBegan: function() {
+        var localStorage = localStorage || cc.sys.localStorage;
+        localStorage.setItem(sz.GuideIndexName, 0);
+        document.location.reload();
     },
 
     /**
@@ -22,7 +34,7 @@ MainScreen = cc.Layer.extend({
         label.setColor(cc.color.RED);
         this.addChild(label, 1000);
         var fadeIn = cc.fadeIn(0.3);
-        var delay = cc.delayTime(0.2);
+        var delay = cc.delayTime(0.4);
         var fadeOut = cc.fadeOut(0.5);
         var moveBy = cc.moveBy(0.5, cc.p(0, 300));
         var sequence = cc.sequence(fadeIn, delay);
@@ -38,10 +50,6 @@ MainScreen = cc.Layer.extend({
         }, 0.5);
     },
 
-    _onBtnHomeTouchEnded: function() {
-        this._showHint('_onBtnHomeTouchEnded');
-    },
-
     _onFire1TouchBegan: function(sender) {
         sender.visible = !sender.visible;
         this._showHint('_onFire1TouchBegan');
@@ -50,7 +58,15 @@ MainScreen = cc.Layer.extend({
     _onFire2TouchBegan: function(sender) {
         sender.visible = !sender.visible;
         this._showHint('_onFire2TouchBegan');
-    }
+    },
+
+    _onBtnHomeTouchEnded: function() {
+        this._showHint('_onBtnHomeTouchEnded');
+    },
+
+    _onBtnTaskTouchEnded: function() {
+        this._showHint('_onBtnHomeTouchEnded');
+    },
 
 });
 
