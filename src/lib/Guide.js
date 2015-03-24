@@ -206,6 +206,8 @@ sz.GuideTaskHandle = cc.Class.extend({
         }
 
         var finish = function() {
+
+            self._guideLayer.stopFingerAction(false);
             if (step.log) {
                 cc.log("guide: <" + step.log + ", step finished >");
             }
@@ -340,6 +342,7 @@ sz.GuideLayer = cc.Layer.extend({
         this._finger = new cc.Sprite(this._guideConfig.fingerImage);
         this._finger.setPosition(this.width * 0.5, this.height * 0.5);
         this._finger.setAnchorPoint(0, 1);
+        this._finger.setVisible(false);
         this.addChild(this._finger);
     },
 
@@ -433,7 +436,7 @@ sz.GuideLayer = cc.Layer.extend({
      */
     stopFingerAction: function(visible) {
         this._finger.stopAllActions();
-        if (_.isBoolean(visible)) {
+        if (typeof visible === 'boolean') {
             this._finger.setVisible(visible);
         }
     },
