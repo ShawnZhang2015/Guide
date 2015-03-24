@@ -297,6 +297,7 @@ sz.uiloader.registerTouchEvent = function(node, target, touchEvent, swallowTouch
             var touchNode = arguments[1].getCurrentTarget();
             var event = sz.uiloader.getWidgetEventName(touchNode, sz.UILoader.touchEvents[index]);
             if (!target[event]) {
+                cc.log('UILoader: ' + event + ' is undefined!');
                 return false;
             }
 
