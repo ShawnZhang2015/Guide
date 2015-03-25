@@ -362,7 +362,7 @@ sz.GuideLayer = cc.Layer.extend({
         if (locateNode instanceof ccui.Widget && locateNode.isTouchEnabled()) {
             this._setLocateNode(locateNode);
         }
-
+        this.showMask();
         //保存任务完成回调函数
         this._setpCallback = callback;
     },
@@ -506,6 +506,29 @@ sz.GuideLayer = cc.Layer.extend({
                 this.locateNode(locator, cb);
             }, this._guideConfig.locateNodeDurationTime || 0.1);
         }
+    },
+
+    /**
+     * 显示遮罩层
+     */
+    showMask: function() {
+        var stencil;
+        if (!this._clipper) {
+            stencil = new cc.LayerColor();//cc.DrawNode();
+            var clipper = new cc.ClippingNode();
+            clipper.stencil = stencil;
+            this.addChild(clipper, -1);
+            clipper.setInverted(true);
+            var content = new cc.LayerColor(cc.color.RED);
+            content.setOpacity(150);
+            clipper.addChild(content);
+            this._clipper = clipper;
+        } else {
+            stencil = this._clipper.stencil;
+        }
+
+        stencil.setContentSize(this._touchRect.width, this._touchRect.height);
+        stencil.setPosition(this._touchRect.x, this._touchRect.y);
     },
 
     destory: function() {
