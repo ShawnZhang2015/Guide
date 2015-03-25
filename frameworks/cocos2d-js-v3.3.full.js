@@ -26619,8 +26619,8 @@ cc.ClippingNode.create = function (stencil) {
          if(!stencil)
             return;
         var node = this._node;
-        if(stencil._renderCmd && stencil._renderCmd._setBlendFuncStr)
-            stencil._renderCmd._setBlendFuncStr(node.inverted ? "destination-out" : "destination-in");
+        if(stencil._renderCmd && stencil._renderCmd._blendFuncStr)
+            stencil._renderCmd._blendFuncStr = (node.inverted ? "destination-out" : "destination-in");
         if(!stencil._children)
             return;
         var children = stencil._children;

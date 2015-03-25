@@ -235,6 +235,9 @@ sz.GuideTaskHandle = cc.Class.extend({
             case sz.GuideCommand.GC_FINGER_HINT:
                 this._guideLayer.locateNode(step.locator, function(node) {
                     self._guideLayer.fingerToNode(node, finish, true);
+                    if (step.showMask) {
+                        self._guideLayer.showMask(true);
+                    }
                     if (step.onLocateNode) {
                         step.onLocateNode.call(self._guideLayer, node);
                     }
@@ -511,7 +514,15 @@ sz.GuideLayer = cc.Layer.extend({
     /**
      * 显示遮罩层
      */
-    showMask: function() {
+    showMask: function(isForce) {
+
+        if (!isForce && !this._guideConfig.isShowMask) {
+            if (this._clipper) {
+                this._clipper.setVisible(false);
+            }
+            return;
+        }
+
         var stencil;
         if (!this._clipper) {
             stencil = new cc.LayerColor();//cc.DrawNode();
@@ -526,7 +537,7 @@ sz.GuideLayer = cc.Layer.extend({
         } else {
             stencil = this._clipper.stencil;
         }
-
+        this._clipper.setVisible(true);
         stencil.setContentSize(this._touchRect.width, this._touchRect.height);
         stencil.setPosition(this._touchRect.x, this._touchRect.y);
     },

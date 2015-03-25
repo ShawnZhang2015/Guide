@@ -28,13 +28,15 @@ var guideConfig = {
             {
                 log: "点亮第一盏灯",
                 command: sz.GuideCommand.GC_FINGER_HINT,
-                locator:"_fire1"
+                locator:"_fire1",
+                showMask: true
             },
 
             {
                 log: "点亮第二盏灯",
                 command: sz.GuideCommand.GC_FINGER_HINT,
-                locator:"_fire2"
+                locator:"_fire2",
+                showMask: true
             },
         ],
 
@@ -50,11 +52,13 @@ var guideConfig = {
             {
                 log:'点击task',
                 command: sz.GuideCommand.GC_FINGER_HINT,
-                locator:"_btnTask"
+                locator:"_btnTask",
+                showMask: true
             }
         ]
     },
     locateNodeDurationTime: 0.1,
     fingerImage: 'res/finger.png',
-    widgetEventType: 2, //touchEnded
+    widgetEventType: 2,
+    isShowMask: false  //默认为不打开
 };
