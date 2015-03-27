@@ -15,92 +15,56 @@
         }
     </script>
 
+    <style>
+        .div-a{ float:left;width:40%;}
+        .div-b{ float:left;width:59%;}
+
+        p{
+            font-size: 1.5em;
+        }
+    </style>
+
+
 </head>
 <body>
-<div>
-    <button type="submit" onclick="resetGuide()">重置引导</button>
+
+
+
+<p>
+    sz.Guide是基于 cocos2d-js 实现的一个简易的新手引导框架，使用json配置文件就能方便编写游戏引导。
     <a href="https://github.com/ShawnZhang2015/Guide">sz.Guide库githut源码地址</a>
+</p>
+
+<div class="div-a">
+    <canvas id="gameCanvas" width="480" height="640"></canvas>
+
 </div>
 
-<div style="margin-left: 10px; font-size: 1.5em">
-    <p style="width: 360px">
-        sz.Guide是基于 cocos2d-js 实现的一个简易的新手引导框架，使用json配置文件就能方便编写游戏引导。
-    </p>
+<div class="div-b">
 
-    <div style="float: right; margin-top: -180px; margin-right: 20px">
-        <p>配置文件</p>
-        <textarea id = "text" style="border:1px solid black; height:480px; width: 380px;" disabled ="disabled">
-var guideConfig = {
-    tasks: {
-        1: [
-            {
-                log: "关闭第一盏灯",
-                command: sz.GuideCommand.GC_FINGER_HINT,
-                locator:"_fire1"
-            },
+    <div>
 
-            {
-                log: "关闭第二盏灯",
-                command: sz.GuideCommand.GC_FINGER_HINT,
-                locator:"_fire2"
-            },
-
-            {
-                log: "保存进度",
-                command: sz.GuideCommand.GC_SAVE_PROGRESS
-            },
-
-            {
-                log: "点亮第一盏灯",
-                command: sz.GuideCommand.GC_FINGER_HINT,
-                locator:"_fire1",
-                showMask: true
-            },
-
-            {
-                log: "点亮第二盏灯",
-                command: sz.GuideCommand.GC_FINGER_HINT,
-                locator:"_fire2",
-                showMask: true
-            },
-        ],
-
-        2: [
-            {
-                log:'点击home',
-                command: sz.GuideCommand.GC_FINGER_HINT,
-                locator:"_btnHome"
-            }
-        ],
-
-        3: [
-            {
-                log:'点击task',
-                command: sz.GuideCommand.GC_FINGER_HINT,
-                locator:"_btnTask",
-                showMask: true
-            }
-        ]
-    },
-    locateNodeDurationTime: 0.1,
-    fingerImage: 'res/finger.png',
-    widgetEventType: 2,
-    isShowMask: false  //默认为不打开
-};
-        </textarea>
-
+        <textarea id = "text" cols="80" rows="30"></textarea>
+        <p><button onclick="editConfig()">修改并重置引导</button></p>
     </div>
 </div>
 
 
-
-<div style="width: 480px; height: 640px;margin:auto;  position:absolute; top: 0; left: 0; bottom: 0; right: 0;border:5px solid black; border-radius: 10px; box-shadow: 0 5px 50px #333">
-    <canvas id="gameCanvas" width="480" height="640"></canvas>
-</div>
-
-
-
 <script type="text/javascript", src="main.js"></script>
 
+<script>
+    function editConfig() {
+        var configStr = document.getElementById('text').value;
+        try {
+            guideConfig = JSON.parse(configStr);
+            resetGuie();
+        } catch (e) {
+            alert('配置有问题！' + JSON.stringify(e));
+        }
+
+    }
+</script>
+
 </body>
+
 </html>

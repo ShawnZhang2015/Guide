@@ -2,6 +2,15 @@
  * Created by zxh on 15/3/17.
  */
 
+function resetGuie() {
+    var localStorage = localStorage || cc.sys.localStorage;
+    localStorage.setItem(sz.GuideIndexName, 0);
+
+    var scene = new cc.Scene();
+    scene.addChild(new MainScreen());
+    cc.director.runScene(scene);
+}
+
 MainScreen = cc.Layer.extend({
 
     ctor: function() {
@@ -18,9 +27,7 @@ MainScreen = cc.Layer.extend({
     },
 
     _onResetGuideTouchBegan: function() {
-        var localStorage = localStorage || cc.sys.localStorage;
-        localStorage.setItem(sz.GuideIndexName, 0);
-        document.location.reload();
+        resetGuie();
     },
 
     /**
@@ -46,7 +53,7 @@ MainScreen = cc.Layer.extend({
     onEnter: function() {
         this._super();
         this.scheduleOnce(function() {
-            new sz.GuideLayer(this, guideConfig);
+            guideLayer = new sz.GuideLayer(this, guideConfig);
         }, 0.5);
     },
 
@@ -60,8 +67,8 @@ MainScreen = cc.Layer.extend({
         this._showHint('_onFire2TouchBegan');
     },
 
-    _onBtnHomeTouchEnded: function() {
-        this._showHint('_onBtnHomeTouchEnded');
+    _onBtnHomeTouchBegan: function() {
+        this._showHint('_onBtnHomeTouchBegan');
     },
 
     _onBtnTaskTouchEnded: function() {

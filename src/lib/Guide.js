@@ -114,8 +114,9 @@ sz.GuideCommand = {
 sz.GuideIndexName = 'sz.guideIndexName';
 
 sz.GuideTaskHandle = cc.Class.extend({
-    _guideLayer: null,
+    _guideLayer:  null,
     _guideConfig: null,
+    _curStepConfig: null,
     ctor: function(guideLayer, guidConfig) {
         this._guideLayer = guideLayer;
         this._guideConfig = guidConfig;
@@ -147,6 +148,7 @@ sz.GuideTaskHandle = cc.Class.extend({
 
         //一个step
         var stepHandle = function(step, callback) {
+            self._curStepConfig = step;
             async.series({
                 //步骤开始
                 stepBegin: function(cb) {
@@ -188,6 +190,10 @@ sz.GuideTaskHandle = cc.Class.extend({
         }, function() {
             self._exitGuide();
         });
+    },
+
+    getCurStepConfig: function() {
+        return this._curStepConfig;
     },
 
     _exitGuide: function() {
@@ -472,11 +478,15 @@ sz.GuideLayer = cc.Layer.extend({
      * @private
      */
     _onWidgetEvent: function(sender, type) {
-        var locateNode = this._locateNode;
-        if (locateNode && (sender === this._locateNode || sender.getName() === locateNode.getName() )) {
+        //检查是否命中控件
+        var isHitWidget = this._locateNode && (sender === this._locateNode || sender.getName() === this._locateNode.getName());
+
+        var stepConfig = this._guideTaskHandle.getCurStepConfig();
+        if (isHitWidget && (stepConfig.eventType === type || this._guideConfig.eventType === type)) {
             this._setLocateNode(null);
             this._setpCallback();
         }
+
     },
 
     /**

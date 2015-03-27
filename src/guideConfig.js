@@ -44,7 +44,8 @@ var guideConfig = {
             {
                 log:'点击home',
                 command: sz.GuideCommand.GC_FINGER_HINT,
-                locator:"_btnHome"
+                locator:"_btnHome",
+                eventType:0
             }
         ],
 
@@ -59,6 +60,6 @@ var guideConfig = {
     },
     locateNodeDurationTime: 0.1,
     fingerImage: 'res/finger.png',
-    widgetEventType: 2,
-    isShowMask: false  //默认为不打开
+    eventType: 2,
+    isShowMask: true  //默认为不打开
 };

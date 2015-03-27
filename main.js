@@ -9,5 +9,10 @@ cc.game.onStart = function(){
         scene.addChild(new MainScreen());
         cc.director.runScene(scene);
     }, this);
+
+
+    var textarea = document.getElementById('text');
+    textarea.value = JSON.stringify(guideConfig, null, 4);
+
 };
 cc.game.run();
