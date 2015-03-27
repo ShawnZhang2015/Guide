@@ -3,8 +3,14 @@ sz.Guide
 
 cocos2d-js游戏简单引导框架
 
+##在线演示
+www.ixuexie.com/Guide/index.html
+
 ## 博客教程
-http://blog.csdn.net/6346289/article/details/44001005#comments
+
+框架分析   blog.csdn.net/6346289/article/details/44586595 (三)
+定位器细节 blog.csdn.net/6346289/article/details/44150147 (二)
+原理和框架 blog.csdn.net/6346289/article/details/44001005 (一)
 
 ## 快速使用
 
