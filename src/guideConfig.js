@@ -12,7 +12,6 @@ var guideConfig = {
                 log: "关闭第一盏灯",
                 command: sz.GuideCommand.GC_FINGER_HINT,
                 locator:"_fire1",
-
                 onEnter: function(cb) {
                     var label = new cc.LabelTTF("关闭第一盏灯", "宋体", 48);
                     var pt = cc.p(this.width / 2, this.height / 2);
