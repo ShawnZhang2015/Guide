@@ -8,9 +8,10 @@ www.ixuexie.com/Guide/index.html
 
 ## 博客教程
 
-框架分析   blog.csdn.net/6346289/article/details/44586595 (三)
-定位器细节 blog.csdn.net/6346289/article/details/44150147 (二)
-原理和框架 blog.csdn.net/6346289/article/details/44001005 (一)
+[一、原理和框架](http://blog.csdn.net/6346289/article/details/44001005)
+[二、定位器细节](http://blog.csdn.net/6346289/article/details/44150147)
+[三、框架分析](http://blog.csdn.net/6346289/article/details/44586595)
+[四、使用方法](http://blog.csdn.net/6346289/article/details/44745771)
 
 ## 快速使用
 
@@ -42,4 +43,12 @@ tasks = {
 	'任务3':[...]
 }
 ```
+
+###定位器语法
+>“/” ：名字（name）定位符，例如： ‘a/b/c’ 、’dialogLayer/_closeButton’
+“#”：tag（id）定位符，例如：’a#123’
+“.”：变量名（var）定位符，例如：’a._okButton’
+“>”：子节点（child）定位符，例如：’a>c’
+
+
 参请见代码guideConfig.js文件
