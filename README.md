@@ -46,9 +46,9 @@ tasks = {
 
 ###定位器语法
 >“/” ：名字（name）定位符，例如： ‘a/b/c’ 、’dialogLayer/_closeButton’
-“#”：tag（id）定位符，例如：’a#123’
-“.”：变量名（var）定位符，例如：’a._okButton’
-“>”：子节点（child）定位符，例如：’a>c’
+>“#”：tag（id）定位符，例如：’a#123’
+>“.”：变量名（var）定位符，例如：’a._okButton’
+>“>”：子节点（child）定位符，例如：’a>c’
 
 
 参请见代码guideConfig.js文件
