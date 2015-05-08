@@ -100,7 +100,23 @@ sz.Locator = {
             cb(node);
         }
         return node;
+    },
+
+    mouseSimulation: function(x, y) {
+        var canvas = document.getElementById("gameCanvas");
+        var pos = cc.inputManager.getHTMLElementPosition(canvas);//getHTMLElementPosition(canvas);
+        var pt = cc.p(x + pos.left, pos.top + pos.height - y);
+
+        var mousedown = document.createEvent("MouseEvent");
+        mousedown.initMouseEvent("mousedown", true, true, window, 0, 0, 0, pt.x, pt.y, true, false, false, false, 0, null);
+        canvas.dispatchEvent(mousedown);
+        setTimeout(function () {
+            var mouseup = document.createEvent("MouseEvent");
+            mouseup.initMouseEvent("mouseup", true, true, window, 0, 0, 0, pt.x, pt.y, true, false, false, false, 0, null);
+            canvas.dispatchEvent(mouseup);
+        }, 100);
     }
+
 };
 
 //引导指令
@@ -110,6 +126,36 @@ sz.GuideCommand = {
     GC_FINGER_HINT: 2,  //手型提示
     GC_SAVE_PROGRESS: 3 //保存进度
 };
+
+
+/**
+ * 文字提示框
+ */
+sz.TextHintLayer = cc.Layer.extend({
+    _textLabel: null,
+    ctor: function() {
+        this._super();
+        this.ignoreAnchor = false;
+        this.setAnchorPoint(0, 0);
+        this.setContentSize(this.width * 0.5, 200);
+        this._textLabel = new cc.LabelTTF("", "Arail", 26);
+        this._textLabel.setAnchorPoint(0, 0.5);
+        this._textLabel.setPosition(10, this.height * 0.5);
+        this.addChild(this._textLabel);
+    },
+
+    setTextHint: function(textHint) {
+        if (!textHint.text) {
+            this.setVisible(false);
+            return;
+        }
+        this.setVisible(true);
+        this._textLabel.string = textHint.text;
+        if (textHint.pos) {
+            this.setPosition(textHint.pos);
+        }
+    }
+});
 
 sz.GuideIndexName = 'sz.guideIndexName';
 
@@ -173,6 +219,8 @@ sz.GuideTaskHandle = cc.Class.extend({
 
                 //步骤完毕
                 stepEnd: function() {
+                    self._guideLayer._isTouchLocked = true;
+                    self._guideLayer.hideMask();
                     if (step.onExit) {
                         step.onExit.call(self._guideLayer, callback);
                     } else {
@@ -212,7 +260,7 @@ sz.GuideTaskHandle = cc.Class.extend({
         }
 
         var finish = function() {
-
+            self._guideLayer._closeTextHint();
             self._guideLayer.stopFingerAction(false);
             if (step.log) {
                 cc.log("guide: <" + step.log + ", step finished >");
@@ -225,28 +273,36 @@ sz.GuideTaskHandle = cc.Class.extend({
             }
         };
 
-        //var command = this._commands[step.command];
-        //command(step, finish);
+//        if(step.textHint){
+//            cc.log(step.textHint.text);
+//        }
 
         switch (step.command) {
+
             //设置属性
             case sz.GuideCommand.GC_SET_PROPERTY:
                 this._guideLayer.locateNode(step.locator, function(node) {
                     var property = step.args[0];
                     var args = step.args.slice(1);
                     node[property].apply(node, args);
+                    finish();
                 });
                 break;
             //手型提示
             case sz.GuideCommand.GC_FINGER_HINT:
                 this._guideLayer.locateNode(step.locator, function(node) {
-                    self._guideLayer.fingerToNode(node, finish, true);
+                    self._guideLayer.fingerToNode(node, finish, self._guideConfig.isFingerAnimation);
                     if (step.showMask) {
                         self._guideLayer.showMask(true);
                     }
                     if (step.onLocateNode) {
                         step.onLocateNode.call(self._guideLayer, node);
                     }
+                    //显示文字提示
+                    if (step.textHint) {
+                        self._guideLayer._showTextHint(step.textHint);
+                    }
+
                 });
                 break;
             //保存进度
@@ -274,6 +330,8 @@ sz.GuideLayer = cc.Layer.extend({
     _touchRect: null,   //可色触摸矩形区
     _locateNode: null,  //定位节点
     _guideTaskHandle: null, //引导任务处理器
+    _isTouchLocked: false,
+
     ctor: function(target, guidConfig) {
         cc.assert(target || guidConfig);
         this._super();
@@ -281,7 +339,6 @@ sz.GuideLayer = cc.Layer.extend({
         this._target = target;
         this._guideConfig = guidConfig;
         this._initFinger();
-        this._target.addChild(this, 100000000);
     },
 
     /**
@@ -363,14 +420,18 @@ sz.GuideLayer = cc.Layer.extend({
      */
     fingerToNode: function(locateNode, callback, isAnimation) {
         this._setLocateNode(null);
+
         var point = locateNode.getParent().convertToWorldSpace(locateNode.getPosition());
-        this._fingerToPoint(point, isAnimation);
+
+        //this._fingerToPoint(point, isAnimation);
         point.x -= locateNode.width * locateNode.anchorX;
         point.y -= locateNode.height * locateNode.anchorY;
         this._touchRect = cc.rect(point.x, point.y, locateNode.width, locateNode.height);
         if (locateNode instanceof ccui.Widget && locateNode.isTouchEnabled()) {
             this._setLocateNode(locateNode);
         }
+        this._fingerToPoint(cc.p(this._touchRect.x + this._touchRect.width * 0.5, this._touchRect.y + this._touchRect.height * 0.5) , isAnimation);
+
         this.showMask();
         //保存任务完成回调函数
         this._setpCallback = callback;
@@ -385,13 +446,13 @@ sz.GuideLayer = cc.Layer.extend({
         this._finger.stopAllActions();
         this._finger.setScale(1);
         this._finger.setVisible(true);
-
+        var moveTime = 0;
         if (point && isAnimation) {
             var width  = this._finger.x - point.x;
             var height = this._finger.y - point.y;
             var length = Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2));
-
-            var moveTo = cc.moveTo(length / (this.width * 1) , point);
+            moveTime = length / (this.width * 1);
+            var moveTo = cc.moveTo(moveTime , point);
             var action = cc.sequence(moveTo, cc.callFunc(function() {
                 var scaleBy = cc.scaleBy(0.3, 0.8);
                 var scaleBy2 = cc.scaleTo(0.3, 1);
@@ -401,6 +462,15 @@ sz.GuideLayer = cc.Layer.extend({
             this._finger.runAction(action);
         } else if (point) {
             this._finger.setPosition(point);
+        }
+
+
+        //是否自动引导
+        if (this._guideConfig.isAutoGuide && !cc.sys.isNative) {
+            var temp = cc.p(point.x, point.y);
+            this.scheduleOnce(function() {
+                sz.Locator.mouseSimulation(temp.x, temp.y);
+            }, moveTime + 0.2);
         }
     },
 
@@ -458,17 +528,37 @@ sz.GuideLayer = cc.Layer.extend({
     _onTouchBegan: function(sender, touch) {
         //可触摸矩形区不存在退出
         if (!this._touchRect) {
-            return false;
+            cc.log("this._touchRect = null");
+            return this._isTouchLocked;
         }
 
         var point = touch.getLocation();
+        //设置点击位置显示
+        if(this._guideConfig.isShowTouchPoint){
+
+            if(!this._colorLayer){
+                this._colorLayer = new cc.LayerColor(cc.color.RED, 10 ,10);
+                this._colorLayer.setAnchorPoint(0.5,0.5);
+                this._colorLayer.ignoreAnchor = false;
+                this.addChild( this._colorLayer,90000);
+            }
+            this._colorLayer.setPosition(point);
+        }
+
+
         var isContains = cc.rectContainsPoint(this._touchRect, point);
-        if (isContains && !this._locateNode) {
-            this._setLocateNode(null);
-            this._setpCallback();
+        if (isContains) {
+            if (!this._locateNode) {
+                this._setLocateNode(null);
+                this._setpCallback();
+            }
         }
 
         return !isContains;
+    },
+
+    _onTouchEnded: function() {
+        cc.log("Guide Layer onTouchEnded");
     },
 
     /**
@@ -482,7 +572,9 @@ sz.GuideLayer = cc.Layer.extend({
         var isHitWidget = this._locateNode && (sender === this._locateNode || sender.getName() === this._locateNode.getName());
 
         var stepConfig = this._guideTaskHandle.getCurStepConfig();
-        if (isHitWidget && (stepConfig.eventType === type || this._guideConfig.eventType === type)) {
+        if (isHitWidget && (stepConfig.eventType === type || this._guideConfig.eventType === type || !this._guideConfig.eventType)) {
+           // cc.log("清空_touchRect");
+           // this._touchRect = null;
             this._setLocateNode(null);
             this._setpCallback();
         }
@@ -521,6 +613,12 @@ sz.GuideLayer = cc.Layer.extend({
         }
     },
 
+    hideMask: function() {
+        if (this._clipper) {
+            this._clipper.setVisible(false);
+        }
+    },
+
     /**
      * 显示遮罩层
      */
@@ -550,6 +648,37 @@ sz.GuideLayer = cc.Layer.extend({
         this._clipper.setVisible(true);
         stencil.setContentSize(this._touchRect.width, this._touchRect.height);
         stencil.setPosition(this._touchRect.x, this._touchRect.y);
+    },
+
+    /**
+     * 显示文字提示
+     * @param textHint
+     * @private
+     */
+    _showTextHint: function(textHint) {
+        if (!textHint.text) {
+            return;
+        }
+        if (!this._textHintLayer) {
+            this._textHintLayer = this._createTextHintLayer();
+            this.addChild(this._textHintLayer);
+        }
+
+        this._textHintLayer.setTextHint(textHint);
+    },
+
+    _closeTextHint: function() {
+        if (this._textHintLayer) {
+            this._textHintLayer.setVisible(false);
+        }
+    },
+
+    /**
+     * 创建文字提示layer
+     * @private
+     */
+    _createTextHintLayer: function() {
+        return new sz.TextHintLayer();
     },
 
     destory: function() {

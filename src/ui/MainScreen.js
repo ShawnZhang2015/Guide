@@ -53,7 +53,8 @@ MainScreen = cc.Layer.extend({
     onEnter: function() {
         this._super();
         this.scheduleOnce(function() {
-            guideLayer = new sz.GuideLayer(this, guideConfig);
+            var guideLayer = new sz.GuideLayer(this, guideConfig);
+            this.addChild(guideLayer);
         }, 0.5);
     },
 

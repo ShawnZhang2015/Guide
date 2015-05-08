@@ -61,5 +61,7 @@ var guideConfig = {
     locateNodeDurationTime: 0.1,
     fingerImage: 'res/finger.png',
     eventType: 2,
-    isShowMask: true  //默认为不打开
+    isShowMask: true,  //默认为不打开
+    isAutoGuide: false,  //自动引导
+    isShowTouchPoint:true
 };

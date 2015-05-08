@@ -66,6 +66,8 @@ sz.UILoader = cc.Class.extend({
             if (prefix === self._memberPrefix) {
                 target[widgetName] = widget;
                 self._registerWidgetEvent(target, widget);
+            }else if (widget.setTouchEnabled){
+                widget.setTouchEnabled(false);
             }
 
             //绑定子控件,可以实现: a._b._c._d 访问子控件
@@ -141,9 +143,12 @@ sz.UILoader = cc.Class.extend({
                 callBack = target[eventName];
             }
 
+
             //事件勾子函数
             if (callBack && self._onWidgetEvent) {
-                self._onWidgetEvent(sender, type);
+                if(self._onWidgetEvent(sender, type) === false){
+                    return;
+                }
             }
 
             //开始
@@ -162,6 +167,7 @@ sz.UILoader = cc.Class.extend({
                     if (time > 0 && time < 5) {
                         target.scheduleOnce(touchLong, time);
                     }
+
                 }
                 return;
             }
@@ -253,6 +259,8 @@ sz.UILoader.widgetEvents = [
     {widgetType: ccui.Layout, events: sz.UILoader.touchEvents},
     //BMFont
     {widgetType: ccui.TextBMFont, events: sz.UILoader.touchEvents},
+    //Text
+    {widgetType: ccui.Text, events: sz.UILoader.touchEvents},
     //last must null
     null
 ];
@@ -296,7 +304,7 @@ sz.uiloader.registerTouchEvent = function(node, target, touchEvent, swallowTouch
         touchListener[eventName] = function() {
             var touchNode = arguments[1].getCurrentTarget();
             var event = sz.uiloader.getWidgetEventName(touchNode, sz.UILoader.touchEvents[index]);
-            if (!target[event]) {
+            if (!touchNode[event]) {
                 cc.log('UILoader: ' + event + ' is undefined!');
                 return false;
             }
@@ -312,7 +320,7 @@ sz.uiloader.registerTouchEvent = function(node, target, touchEvent, swallowTouch
 
             var args = Array.prototype.slice.call(arguments);
             args.unshift(touchNode);
-            var ret = target[event].apply(target, args);
+            var ret = touchNode[event].apply(touchNode, args);
             if (sz.uiloader._onNodeEvent) {
                 sz.uiloader._onNodeEvent(touchNode, args[1], args[2]);
             }
